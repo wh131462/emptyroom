@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="广西科技大学易班技术部">
+		<meta name="author" content="GXUST-Yiban-TechGroup">
+		<meta name="keywords" content="广西科技大学易班技术部,广西科技大学易班,易班,yiban.cn">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta http-equiv="Page-Enter" Content="revealTrans(duration=2, transition=4)">
+		<meta http-equiv="Page-Exit" Content="revealTrans(duration=2, transition=23)">
+		<title>应用-空教室查询</title>
+		<link rel="shortcut icon" href="images/logo.ico">
+		<link rel="stylesheet" type="text/css" href=""/>
+	</head>
+	<body>
+		<!-- 空教室需要内容 教学楼 周数 星期 日期 节次开始 结束-->
+		
+		<div id="main">
+			<form action="php/emptyRoom.php" method="post">
+				<select name="jxl">
+					<option value="第一教学楼">第一教学楼</option>
+					<option value="第二教学楼">第二教学楼</option>
+					<option value="第三教学楼">第三教学楼</option>
+					<option value="第四教学楼">第四教学楼</option>
+					<option value="第五教学楼">第五教学楼</option>
+					<option value="第六教学楼">第六教学楼</option>
+					<option value="工训一号楼">工训一号楼</option>
+					<option value="工训二号楼">工训二号楼</option>
+					<option value="工训三号楼">工训三号楼</option>
+					<option value="工训四号楼">工训四号楼</option>
+					<option value="基础实验楼">基础实验楼</option>
+					<option value="科教中心楼">科教中心楼</option>
+					<option value="螺蛳山工会">螺蛳山工会</option>
+					<option value="螺蛳山平房">螺蛳山平房</option>
+					<option value="其它">其它</option>
+					<option value="琴房">琴房</option>
+					<option value="生化楼">生化楼</option>
+					<option value="体育馆">体育馆</option>
+					<option value="图书馆">图书馆</option>
+					<option value="土建楼">土建楼</option>
+					<option value="T1教学楼">T1教学楼</option>
+					<option value="T2教学楼">T2教学楼</option>
+					<option value="T3教学楼">T3教学楼</option>
+					<option value="T4教学楼">T4教学楼</option>
+					<option value="T5教学楼">T5教学楼</option> 
+					<option value="T6教学楼">T6教学楼</option>
+					<option value="T7教学楼">T7教学楼</option>
+					<option value="1栋教学楼">1栋教学楼</option>
+					<option value="2栋教学楼">2栋教学楼</option>
+					<option value="3栋教学楼">3栋教学楼</option>
+					<option value="4栋教学楼">4栋教学楼</option>
+					<option value="5栋教学楼">5栋教学楼</option>
+					<option value="白沙教学楼">白沙教学楼</option>
+					<option value="箭盘教学楼">箭盘教学楼</option>
+					<option value="柳石实验楼">柳石实验楼</option>
+					<option value="市人医教学楼">市人医教学楼</option>
+				</select>
+				<select name="week">
+					<option value="1">第一周</option>
+					<option value="2">第二周</option>
+					<option value="3">第三周</option>
+					<option value="4">第四周</option>
+					<option value="5">第五周</option>
+					<option value="6">第六周</option>
+					<option value="7">第七周</option>
+					<option value="8">第八周</option>
+					<option value="9">第九周</option>
+					<option value="10" selected="selected">第十周</option>
+					<option value="11">第十一周</option>
+					<option value="12">第十二周</option>
+					<option value="13">第十三周</option>
+					<option value="14">第十四周</option>
+					<option value="15">第十五周</option>
+					<option value="16">第十六周</option>
+					<option value="17">第十七周</option>
+					<option value="18">第十八周</option>
+					<option value="19">第十九周</option>
+					<option value="20">第二十周</option>
+					<option value="21">第二十一周</option>
+					<option value="22">第二十二周</option>
+					<option value="23">第二十三周</option>
+					<option value="24">第二十四周</option>
+					<option value="25">第二十五周</option>
+				</select>
+				<select name="day">
+					<option value="1">星期一</option>
+					<option value="2">星期二</option>
+					<option value="3">星期三</option>
+					<option value="4">星期四</option>
+					<option value="5">星期五</option>
+					<option value="6">星期六</option>
+					<option value="7">星期日</option>
+				</select>
+				<select name="jc_start">
+					<option value="1">第一节</option>
+					<option value="2">第二节</option>
+					<option value="3">第三节</option>
+					<option value="4">第四节</option>
+					<option value="5">第五节</option>
+					<option value="6">第六节</option>
+					<option value="7">第七节</option>
+					<option value="8">第八节</option>
+					<option value="9">第九节</option>
+					<option value="10">第十节</option>
+					<option value="11">第十一节</option>
+					<option value="12">第十二节</option>
+					<option value="13">第十三节</option>
+				</select>
+				<select name="jc_end">
+					<option value="1">第一节</option>
+					<option value="2">第二节</option>
+					<option value="3">第三节</option>
+					<option value="4">第四节</option>
+					<option value="5">第五节</option>
+					<option value="6">第六节</option>
+					<option value="7">第七节</option>
+					<option value="8">第八节</option>
+					<option value="9">第九节</option>
+					<option value="10">第十节</option>
+					<option value="11">第十一节</option>
+					<option value="12">第十二节</option>
+					<option value="13">第十三节</option>
+				</select>
+				<input type="text" name="xq" value="19-20-1" hidden="hidden"/>
+				<input type="submit" value="开始查询"/>
+			</form>
+		</div>
+		<script type="text/javascript">
+			//js部分要获取当前学期 和周数 还有日期  和当前日期和周数星期的转化
+			fetch("php/sj.php") 
+			.then(function(response){return response.json()})
+			.then(function(res){
+				// res["week"] res["day"] console.log(res);
+				var week=document.getElementsByName("week")[0];
+				var day=document.getElementsByName("day")[0];
+				week.getElementsByTagName("option")[parseInt(res["week"].toString().slice(1,-1))-1].selected=true;//选择当前周
+				day.getElementsByTagName("option")[parseToInt(res["day"])-1].selected=true;//选择当前星期数
+				var xq=document.getElementsByName("xq")[0];
+				xq.value=res["xq"];
+			})
+			.catch(function(err){console.log(err);});
+			
+			function parseToInt(str){
+				var int=str=="星期一"?1:str=="星期二"?2:str=="星期三"?3:str=="星期四"?4:str=="星期五"?5:str=="星期六"?6:str=="星期日"?7:-1;
+				return int;
+			}
+		</script>
+	</body>
+</html>
