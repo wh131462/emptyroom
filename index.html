@@ -18,6 +18,10 @@
 		<!-- 空教室需要内容 教学楼 周数 星期 日期 节次开始 结束-->
 		
 		<div id="main">
+			<div class="date">
+				<p>现在是北京时间<span id="date">2019年1月1日0:0:00</span></p>
+				<p>本周为<span id="study_week">第一周</span></p>
+			</div>
 			<form action="php/emptyRoom.php" method="post">
 				<select name="jxl">
 					<option value="第一教学楼">第一教学楼</option>
@@ -67,7 +71,7 @@
 					<option value="7">第七周</option>
 					<option value="8">第八周</option>
 					<option value="9">第九周</option>
-					<option value="10" selected="selected">第十周</option>
+					<option value="10">第十周</option>
 					<option value="11">第十一周</option>
 					<option value="12">第十二周</option>
 					<option value="13">第十三周</option>
@@ -139,6 +143,7 @@
 				day.getElementsByTagName("option")[parseToInt(res["day"])-1].selected=true;//选择当前星期数
 				var xq=document.getElementsByName("xq")[0];
 				xq.value=res["xq"];
+				document.getElementById("study_week").innerHTML=res["week"];
 			})
 			.catch(function(err){console.log(err);});
 			
@@ -146,6 +151,12 @@
 				var int=str=="星期一"?1:str=="星期二"?2:str=="星期三"?3:str=="星期四"?4:str=="星期五"?5:str=="星期六"?6:str=="星期日"?7:-1;
 				return int;
 			}
+			var time=setInterval(function(){
+				var date=new Date();
+				var now=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+date.getHours(24)+":"+date.getMinutes()+":"+date.getSeconds();
+				var show=document.getElementById("date");
+				show.innerHTML=now;
+				},1000);
 		</script>
 	</body>
 </html>

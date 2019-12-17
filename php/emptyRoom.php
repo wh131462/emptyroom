@@ -27,12 +27,46 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	getSession();//获取session
 	$res=_require($URL,$COOKIEJAR,"POST",$ER);//获取反馈页面
 	$html=str_get_html($res);//网页原文转对象
-	foreach($html->find('table[id=GVkb]') as $key=>$value){
-		if($key==0){
-			$tb=$value;//整个表
+	$cont=1;//计数器
+	$arr=[];//小数组
+	$res=array();//大数组
+	$row=1;//行计数器
+	foreach($html->find('tr[class=dg1-header2] th') as $key=>$value){
+		$value=strip_tags($value);
+		array_push($arr,$value);//表头部分
+		if($cont%13==0){
+			$res[0]=$arr;
 		}
+		$cont++;
 	}
-	echo $tb;
+	$arr=[];//小数组清空
+	$cont=1;//计数器置零
+	foreach($html->find('tr[class=dg1-item] td') as $key=>$value){
+		$value=strip_tags($value);
+		if($value!=null&&$cont%13!=1){
+			if($value=="                                                                                                                                "){
+				array_push($arr,"N");//空教室
+			}else{
+				array_push($arr,"Y");//非空
+			}
+			
+		}else if($value!=null&&$cont%13==1){
+			array_push($arr,$value);
+		}
+		if($cont%13==0){
+			if($cont==13){
+				//置空操作 不保存第一行空数组
+				$arr=[];
+			}else{
+				$res[$row]=$arr;//压入数组并清空小数组
+				$arr=[];
+				$row++;
+			}
+		}
+		$cont++;
+	}
+	$json=json_encode($res,true);
+	echo $json;
 }else{
 	echo "What you are doing is illegal access.Please quit this website.<br>你正在进行的是非法访问，请退出此网站。";
 }
