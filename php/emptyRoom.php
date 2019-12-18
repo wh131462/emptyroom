@@ -35,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$value=strip_tags($value);
 		array_push($arr,$value);//表头部分
 		if($cont%13==0){
+			array_push($arr,"第 13 节");
 			$res[0]=$arr;
 		}
 		$cont++;
@@ -58,6 +59,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 				//置空操作 不保存第一行空数组
 				$arr=[];
 			}else{
+				array_push($arr,$arr[12]);
 				$res[$row]=$arr;//压入数组并清空小数组
 				$arr=[];
 				$row++;

@@ -1,0 +1,418 @@
+/* 空教室查询css 适配三端 PC 平板 手机 */
+/* PC */
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right,#e66465, #9198e5);
+}
+#loading{
+	width: 100%;
+	height: 10000px;
+	background: rgba(255,255,255,0.6);
+	margin-top: -100px;
+	position: fixed;
+	z-index: 999;
+}
+#loading img{
+	display: block;
+	animation:loading 2s  infinite;
+	width: 50px;
+	height: 50px;
+	left: 50%;
+	top:50%;
+	margin-left: -25px;
+	margin-top: -25px;
+	position:fixed;
+}
+@keyframes loading{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
+@media screen and (min-width:769px) {
+	#top a{
+		display: block;
+		width: 100px;
+		color: #EEE;
+		background: rgba(255,255,255,0.3);
+		text-align: center;
+		font-family: "kaiti";
+		font-size: 1.2rem;
+		border: #666666 solid 1px;
+		border-radius: 5px;
+		margin: 2px 0 0 2px;
+		text-decoration: none;
+	}
+	#top a:hover{
+		color: #FFF;
+		box-shadow: #000000 0px 0px 1px; 
+		background:rgba(255,255,255,0.4) ;
+	}
+	#home{
+		display: none;
+	}
+	.date,#ERtip{
+		width: 60%;
+		margin: 0 auto;
+		text-align: center;
+		font-family: "kaiti";
+		font-size: 1.8rem;
+		color: #333;
+	}
+	#study_week,#date{
+		color: rgba(255,255,255,0.9);
+	}
+	#form1{
+		/* 手机端隐藏 */
+		display: none;
+	}
+	#form{
+		width: 100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	#form table{
+		margin: 0 auto;
+	}
+	#form input,#form select,#form label{
+		font-size: 1.5rem;
+		height: 60px;
+		padding: 10px;
+		font-family: "youyuan";
+	}
+	#form select{
+		background: #EEE;
+		color: #000;
+		border: #666666 solid 1px;
+		border-radius: 10px;
+	}
+	#form select[name=jc_start],#form select[name=jc_end]{
+		width: 45%;
+	}
+	#form input{
+		background: rgba(0,0,255,0.5);
+		border: rgba(0,0,0,0.3) solid 1px;
+		border-radius: 10px;
+		box-shadow: #00F 0px 1px 2px;
+		color: rgba(255,255,255,0.9);
+	}
+	#form input:hover{
+		background: rgba(0,0,255,0.6);
+		color: rgba(255,255,255,0.9);
+	}
+	
+	#ERtip{
+		margin-top:30px ;
+	}
+	#cont{
+		color: #FF7788;
+		text-shadow: #000 0px 1px 1px;
+		text-decoration: underline;
+	}
+	#emptyRoom{
+		width: 60%;
+		margin:0 auto;
+		text-align: center;
+	}
+	#emptyRoom p{
+		display: inline-block;
+		width: 200px;
+		margin: 5px 5px;
+		padding: 5px;
+		font-family: "youyuan";
+		font-weight: bold;
+		font-size: 1.2rem;
+		color: #f67280;
+		text-shadow: #000 1px 1px 1px;
+		border: #FFF solid 1px;
+		border-radius: 10px;
+		background: #FFF;
+	}
+	#emptyRoom p:last-child{
+		margin-bottom: 60px;
+	}
+	.foot{
+		width: 100%;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		color: #FFF;
+		background: rgba(255,255,255,0.3);
+	}
+	.foot a{
+		text-decoration: none;
+		color: #FFF;
+	}
+}
+/* 平板 */
+@media screen and (min-width:377px) and (max-width:768px){
+	#top a{
+		display: block;
+		width: 100px;
+		color: #EEE;
+		background: rgba(255,255,255,0.3);
+		text-align: center;
+		font-family: "kaiti";
+		font-size: 1.2rem;
+		border: #666666 solid 1px;
+		border-radius: 5px;
+		margin: 2px 0 0 2px;
+		text-decoration: none;
+	}
+	#top a:hover{
+		color: #FFF;
+		box-shadow: #000000 0px 0px 1px; 
+		background:rgba(255,255,255,0.4) ;
+	}
+	#home{
+		display: none;
+		
+	}
+	.date,#ERtip{
+		width: 60%;
+		margin: 0 auto;
+		text-align: center;
+		font-family: "kaiti";
+		font-size: 1.5rem;
+		color: #333;
+	}
+	#study_week,#date{
+		color: rgba(255,255,255,0.9);
+	}
+	#form1{
+		/* 手机端隐藏 */
+		display: none;
+	}
+	#form{
+		width: 100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	#form table{
+		margin: 0 auto;
+	}
+	#form input,#form select,#form label{
+		font-size: 1.2rem;
+		height: 60px;
+		padding: 10px;
+		font-family: "youyuan";
+	}
+	#form select{
+		background: #EEE;
+		color: #000;
+		border: #666666 solid 1px;
+		border-radius: 10px;
+	}
+	#form input{
+		background: rgba(0,0,255,0.5);
+		border: rgba(0,0,0,0.3) solid 1px;
+		border-radius: 10px;
+		box-shadow: #00F 0px 1px 2px;
+		color: rgba(255,255,255,0.9);
+	}
+	#form input:hover{
+		background: rgba(0,0,255,0.6);
+		color: rgba(255,255,255,0.9);
+	}
+	
+	#ERtip{
+		margin-top:30px ;
+	}
+	#cont{
+		color: #FF7788;
+		text-shadow: #000 0px 1px 1px;
+		text-decoration: underline;
+	}
+	#emptyRoom{
+		width: 100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	#emptyRoom p{
+		display: inline-block;
+		width: 200px;
+		margin: 5px 5px;
+		padding: 5px;
+		font-family: "youyuan";
+		font-weight: bold;
+		font-size: 1.2rem;
+		color: #000;
+		border: #FFF solid 1px;
+		border-radius: 10px;
+		background: #FFF;
+	}
+	#emptyRoom p:last-child{
+		margin-bottom: 60px;
+	}
+	.foot{
+		width: 100%;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		color: #FFF;
+		background: rgba(255,255,255,0.3);
+	}
+	.foot a{
+		text-decoration: none;
+		color: #FFF;
+	}
+}
+/* 手机 */
+@media screen and (max-width:376px) {
+	#top a{
+		display: none;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		color: #EEE;
+		background: rgba(255,255,255,0.3);
+		text-align: center;
+		font-family: "kaiti";
+		font-size: 1.2rem;
+		border: #666666 solid 1px;
+		border-radius: 50%;
+		margin: 2px 0 0 2px;
+		text-decoration: none;
+		position: absolute;
+		top: 0;
+	}
+	#top a:hover{
+		color: #FFF;
+		box-shadow: #000000 0px 0px 1px; 
+		background:rgba(255,255,255,0.4) ;
+	}
+	#home,#home img{
+		display: block;
+		width: 40px;
+		height: 40px;
+		background:rgba(255,255,255,0.2);
+		border-radius: 50%;
+		top: 2px;
+		left: 2px;
+		position: fixed;
+	}
+	.date,#ERtip{
+		/* 日期和提示 */
+		width: 100%;
+		margin: 0 auto;
+		font-family: "kaiti";
+		font-size:1.4rem;
+		color: #333;
+	}
+	.date{
+		text-align: center;
+	}
+	#date{
+		display: block;
+	}
+	.date p:nth-child(1){
+		margin-bottom: 2px;
+	}
+	.date p:nth-child(2){
+		margin: 0 0 20px 0;
+	}
+	#ERtip{
+		color: #EEEEEE;
+		text-align: center;
+	}
+	#study_week,#date{
+		color: rgba(255,255,255,0.9);
+	}
+	#form{
+		/* 手机端隐藏 */
+		display: none;
+	}
+	#form1{
+		width: 100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	#form1 table{
+		width: 100%;
+	}
+	#form1 td:nth-child(odd){
+		width: 25%;
+		text-align: right;
+	}
+	#form1 td:nth-child(even){
+		width: 75%;
+		text-align: center;
+	}
+	#form1 input,#form1 select,#form1 label{
+		font-size: 0.9rem;
+		height: 25px;
+		font-family: "youyuan";
+	}
+	#form1 select{
+		background: #EEE;
+		color: #000;
+		border: #666666 solid 1px;
+		border-radius: 4px;
+	}
+	#form1 select[name=jxl]{
+		width: 92%;
+	}
+	#form1 select[name=week],#form1 select[name=day]{
+		width: 45%;
+	}
+	#form1 select[name=jc_start],#form1 select[name=jc_end]{
+		width: 43%;
+	}
+	#form1 input:nth-child(2){
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+		background: rgba(0,0,255,0.5);
+		border: rgba(0,0,0,0.3) solid 1px;
+		border-radius: 10px;
+		box-shadow: #00F 0px 1px 2px;
+		color: rgba(255,255,255,0.9);
+	}
+	#form1 input:hover{
+		background: rgba(0,0,255,0.6);
+		color: rgba(255,255,255,0.9);
+	}
+	
+	#ERtip{
+		margin-top:10px ;
+	}
+	#cont{
+		color: #FF7788;
+		text-shadow: #000 0px 1px 1px;
+		text-decoration: underline;
+	}
+	#emptyRoom{
+		width: 100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	#emptyRoom p{
+		display:block;
+		width: 80%;
+		margin: 5px auto;
+		padding: 5px;
+		font-family: "youyuan";
+		font-weight: bold;
+		font-size: 1.2rem;
+		color: #f67280;
+		text-shadow: #000 1px 1px 1px;
+		border: #FFF solid 1px;
+		border-radius: 10px;
+		background: #EEE;
+	}
+	#emptyRoom p:last-child{
+		margin-bottom: 60px;
+	}
+	.foot{
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		color: #FFF;
+		background: rgba(255,255,255,0.3);
+	}
+	.foot a{
+		text-decoration: none;
+		color: #FFF;
+	}
+}
