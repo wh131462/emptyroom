@@ -15,7 +15,7 @@ fetch("php/emptyRoom.php",{
 })
 .then(function(response){return response.json();})
 .then(function(res){
-	console.log(res)//对json数据进行处理 
+	// console.log(res)//对json数据进行处理 
 	var start=document.getElementsByName("jc_start")[formid].value;
 	var end=document.getElementsByName("jc_end")[formid].value;
 	var ER=document.getElementById("emptyRoom");
@@ -27,7 +27,7 @@ fetch("php/emptyRoom.php",{
 	for(var i=1;i<res.length;i++){
 		for(var j=start;j<=end;j++){
 			if(res[i][j]=="Y"){
-				console.log(res[i][0]+"有使用");
+				// console.log(res[i][0]+"有使用");
 				break;
 			}else if(j==end&&res[i][j]=="N"){
 				var p=document.createElement("p");
@@ -36,7 +36,7 @@ fetch("php/emptyRoom.php",{
 				ER.appendChild(p);
 				cont++;
 			}else{
-				console.log(res[i][0]+"的"+j+"跳过");
+				// console.log(res[i][0]+"的"+j+"跳过");
 			}
 		}
 	}

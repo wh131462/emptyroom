@@ -144,7 +144,7 @@ body{
 	}
 }
 /* 平板 */
-@media screen and (min-width:377px) and (max-width:768px){
+@media screen and (min-width:427px) and (max-width:768px){
 	#top a{
 		display: block;
 		width: 100px;
@@ -257,7 +257,7 @@ body{
 	}
 }
 /* 手机 */
-@media screen and (max-width:376px) {
+@media screen and (max-width:426px) {
 	#top a{
 		display: none;
 		width: 60px;
