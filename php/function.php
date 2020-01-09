@@ -34,7 +34,9 @@ function getSession(){
 }
 function getSJ(){//获取时间
 	$json=_require("https://gxust-yiban.com:10086/php/action.php?username=201809501003&password=11220916","","","");
-	return substr($json,46,116);
+	$JSON=json_decode($json);
+	header("Content-Type: text/html; charset=UTF-8");
+	return $JSON->sj;//直接返回sj
 }
 //unicode 编码
 function UnicodeEncode($str){

@@ -2,7 +2,7 @@
 header("Content-type:text/html;charset=utf-8");
 //时间接口 获取学校时间
 require_once("function.php");
-$sj=unicodeDecode(getSJ());
+$sj=getSJ();
 $day=substr($sj,9,9);
 preg_match("/.*\s(.*)\s.*/i",$sj,$xq);
 preg_match("/第.*?周/",$sj,$week);

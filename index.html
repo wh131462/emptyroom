@@ -302,14 +302,15 @@
 			fetch("php/sj.php") 
 			.then(function(response){return response.json()})
 			.then(function(res){
-				// res["week"] res["day"] console.log(res);
+				// res["week"] res["day"] 
+				console.log(res);
 				var week=document.getElementsByName("week")[0];
 				var day=document.getElementsByName("day")[0];
 				var week1=document.getElementsByName("week")[1];
 				var day1=document.getElementsByName("day")[1];
-				week.getElementsByTagName("option")[parseInt(res["week"].toString().slice(1,-1))-1].selected=true;//选择当前周
+				week.getElementsByTagName("option")[parseInt(res["week"])-1].selected=true;//选择当前周
 				day.getElementsByTagName("option")[parseToInt(res["day"])-1].selected=true;//选择当前星期数
-				week1.getElementsByTagName("option")[parseInt(res["week"].toString().slice(1,-1))-1].selected=true;//选择当前周
+				week1.getElementsByTagName("option")[parseInt(res["week"])-1].selected=true;//选择当前周
 				day1.getElementsByTagName("option")[parseToInt(res["day"])-1].selected=true;//选择当前星期数
 				var xq=document.getElementsByName("xq")[0];
 				xq.value=res["xq"];
