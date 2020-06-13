@@ -150,7 +150,7 @@
 						</select>
 						</td>
 						<td>
-							<input type="text" name="xq" value="19-20-1" hidden="hidden"/>
+							<input type="text" name="xq" id="xq" value="" hidden="hidden"/>
 							<input type="button" value="开始查询" onclick="sub(0)"/>
 						</td>
 					</tr>
@@ -283,7 +283,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-							<input type="text" name="xq" value="19-20-1" hidden="hidden"/>
+							<input type="text" name="xq" id="xq1" value="" hidden="hidden"/>
 							<input type="button" value="开始查询" onclick="sub(1)"/></td>
 						</tr>
 					</table>
@@ -311,9 +311,10 @@
 				day.getElementsByTagName("option")[parseToInt(res["day"])-1].selected=true;//选择当前星期数
 				week1.getElementsByTagName("option")[parseInt(res["week"].toString().slice(1,-1))-1].selected=true;//选择当前周
 				day1.getElementsByTagName("option")[parseToInt(res["day"])-1].selected=true;//选择当前星期数
-				var xq=document.getElementsByName("xq")[0];
+				var xq=document.getElementById("xq");
 				xq.value=res["xq"];
-				var xq1=document.getElementsByName("xq")[1];
+				console.log(xq.value);
+				var xq1=document.getElementById("xq1");
 				xq1.value=res["xq"];
 				document.getElementById("study_week").innerHTML=res["week"];
 			})
